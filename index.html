@@ -119,11 +119,9 @@
                     <div class="chat">
                         <!-- MESSAGES -->
                         <div class="messages">
-                            <div v-for="(curMessage, index) in contacts[0].messages" v-if="curMessage.status" class="sent flex x-right">
+                            <div :class="(message.status === 'sent') ? 'x-right sent' : 'x-left received'" class="flex" v-for="(message, index) in contacts[activeIndex].messages">
                                 <div class="message">
-                                    <div class="message-content">
-                                        <p>{{contacts[index].messages[index].message}}</p>
-                                    </div>
+                                    <p>{{message.message}}</p>
                                     <div class="message-options icongrey">
                                         <span><a href=""><i class="fa-solid fa-chevron-down"></i></a></span>
                                         <div class="options">
@@ -134,26 +132,7 @@
                                         </div>
                                     </div>
                                     <div class="message-time verysmallfont icongrey">
-                                        <span>{{contacts[index].messages[index].date}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="incoming flex x-left">
-                                <div class="message">
-                                    <div class="message-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, alias architecto consequatur a, veniam obcaecati tempore neque repellat harum animi atque fuga natus excepturi sint non ratione illo eius nostrum!</p>
-                                    </div>
-                                    <div class="message-options icongrey">
-                                        <span><a href=""><i class="fa-solid fa-chevron-down"></i></a></span>
-                                        <div class="options">
-                                            <ul>
-                                                <li><button>Info Messaggio</button></li>
-                                                <li><button>Cancella Messaggio</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="message-time verysmallfont icongrey">
-                                        <span>16:15</span>
+                                        <span>{{message.date}}</span>
                                     </div>
                                 </div>
                             </div>

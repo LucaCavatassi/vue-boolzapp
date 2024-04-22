@@ -7,4 +7,6 @@
 - [] Click sul contatto mostra la conversazione del contatto cliccato
 
 
-se lo status è sent allora stampami tutti i messagi sent 
+se lo status è sent allora stampami tutti i messagi sent e classe uguale sent
+
+per ogni message con status sent stampa 

@@ -274,8 +274,9 @@ header{
     background-color: var(--messagegreen);
 }
 
-.incoming .message{
+.received .message{
     background-color: white;
+    
 }
 
 /* CHAT FOOTER */
