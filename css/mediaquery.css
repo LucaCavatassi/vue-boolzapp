@@ -11,7 +11,7 @@
     /****************** LEFT *****************/
     /* NAV */
     .nav{
-        width: 80px;
+        width: 90px;
     }
 
     .nav main{
@@ -42,8 +42,9 @@
     }
 
     .all-contact{
-        width: 80px;
+        width: 90px;
         height: 100%;
+        overflow-x: hidden;
     }
     .contact-preview{
         justify-content: center;
