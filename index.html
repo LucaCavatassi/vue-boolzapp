@@ -22,7 +22,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <main class="webapp flex main-center cross-center">
+    <main id="app" class="webapp flex main-center cross-center">
         <div class="container flex">
 
             <!-- *******LEFT******* -->
@@ -255,8 +255,9 @@
                                 <button><i class="fa-regular fa-face-smile"></i></button>
                             </div>
                             <input aria-label="type" type="text" id="type" placeholder="Scrivi un messaggio">
-                            <div class="audio-message">
-                                <button><i class="fa-solid fa-microphone"></i></button>
+                            <button><i class="fa-solid fa-microphone"></i></button>
+                            <div class="send-message">
+                                <button><i class="fa-solid fa-share"></i></button>
                             </div>
                         </div>
                         <!-- /TYPING -->
