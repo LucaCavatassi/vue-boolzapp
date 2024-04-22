@@ -3,9 +3,8 @@ const {createApp} = Vue
 createApp({
     data() {
         return {
-            activeIndex: 0,
             contacts: [
-        //CONTACT  
+                //CONTACT  
                 {
                     name: 'Michele',
                     avatar: '_1',
@@ -28,7 +27,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Fabio',
                     avatar: '_2',
@@ -40,18 +39,18 @@ createApp({
                             status: 'sent'
                         }, 
                         {
-                        date: '20/03/2020 16:30:55',
-                        message: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                            date: '20/03/2020 16:30:55',
+                            message: 'Bene grazie! Stasera ci vediamo?',
+                            status: 'received'
                         },
                         {
-                        date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
+                            date: '20/03/2020 16:35:00',
+                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            status: 'sent'
                         },
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Samuele',
                     avatar: '_3',
@@ -74,7 +73,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
@@ -92,7 +91,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
@@ -110,7 +109,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Claudia',
                     avatar: '_6',
@@ -133,7 +132,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Federico',
                     avatar: '_7',
@@ -151,7 +150,7 @@ createApp({
                         }
                     ],
                 }, 
-            //CONTACT  
+                //CONTACT  
                 {
                     name: 'Davide',
                     avatar: '_8',
@@ -175,13 +174,15 @@ createApp({
                     ],
                 },
             ],
+            activeIndex: 0,
             
         }
     },
     
     methods: {
-        lastPosition: function(){
-            let lastPosition = this.contacts.messages.length - 1;
-        }
+        
     }
 }).mount('#app')
+
+
+// al click activeIndex diventa index dell'elemento cliccato

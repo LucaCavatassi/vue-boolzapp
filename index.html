@@ -67,7 +67,7 @@
                         <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="all-contact" >
-                        <div class="contact-card" v-for="curContact in contacts">
+                        <div class="contact-card" v-for="(curContact, index) in contacts" @click="activeIndex = index">
                             <div class="contact-photo">
                                 <img :src="`./img/avatar${curContact.avatar}.jpg`"
                                 alt="contact-avatar">
@@ -91,10 +91,11 @@
                 <header>
                     <div class="contact-info">
                         <div class="contact-photo">
-                            <img src="./img/avatar_1.jpg" alt="contact-avatar">
+                            <img :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`"
+                            alt="contact-avatar">
                         </div>
                         <div class="last-seen smallfont">
-                            <h4 class="p-y-2">Michele</h4>
+                            <h4 class="p-y-2">{{contacts[activeIndex].name}}</h4>
                             <span class="typing-icons-grey smallerfont">Ultimo accesso oggi alle 16:45</span>
                         </div>
                     </div>

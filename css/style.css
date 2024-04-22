@@ -223,7 +223,7 @@ header{
     background-image: url(../img/mine.jpg);
 }
 
-.sent , .incoming{
+.sent , .received{
     margin-bottom: 10px;
 }
 
