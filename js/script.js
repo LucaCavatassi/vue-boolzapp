@@ -3,8 +3,9 @@ const {createApp} = Vue
 createApp({
     data() {
         return {
+            activeIndex: 0,
             contacts: [
-                //CONTACT  
+        //CONTACT  
                 {
                     name: 'Michele',
                     avatar: '_1',
@@ -27,7 +28,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Fabio',
                     avatar: '_2',
@@ -50,7 +51,7 @@ createApp({
                         },
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Samuele',
                     avatar: '_3',
@@ -73,7 +74,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
@@ -91,7 +92,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
@@ -109,7 +110,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Claudia',
                     avatar: '_6',
@@ -132,7 +133,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Federico',
                     avatar: '_7',
@@ -150,7 +151,7 @@ createApp({
                         }
                     ],
                 }, 
-                //CONTACT  
+            //CONTACT  
                 {
                     name: 'Davide',
                     avatar: '_8',
@@ -174,15 +175,32 @@ createApp({
                     ],
                 },
             ],
-            activeIndex: 0,
             
         }
     },
     
     methods: {
-        
+        responseMessage: function() {
+            let responseMessage = {
+                date: Date(),
+                message: "ok",
+                status: "received",
+            }
+            this.contacts[this.activeIndex].messages.push(responseMessage);
+        },
+
+        newMessagePush: function(index){
+            let newMessage = {
+                date: Date(),
+                message: this.userText,
+                status: 'sent'
+            }
+            this.contacts[index].messages.push(newMessage);
+            this.userText = ""
+
+            setTimeout (this.responseMessage, 1000)
+            return newMessage
+        }
     }
 }).mount('#app')
 
-
-// al click activeIndex diventa index dell'elemento cliccato

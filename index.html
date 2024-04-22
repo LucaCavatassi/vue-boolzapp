@@ -96,7 +96,7 @@
                         </div>
                         <div class="last-seen smallfont">
                             <h4 class="p-y-2">{{contacts[activeIndex].name}}</h4>
-                            <span class="typing-icons-grey smallerfont">Ultimo accesso oggi alle 16:45</span>
+                            <span class="typing-icons-grey smallerfont"></span>
                         </div>
                     </div>
                     <div class="tool-bar">
@@ -145,9 +145,9 @@
                             <div class="emoji">
                                 <button><i class="fa-regular fa-face-smile"></i></button>
                             </div>
-                            <input aria-label="type" type="text" id="type" placeholder="Scrivi un messaggio">
+                            <input aria-label="type" type="text" v-model="userText" id="type" placeholder="Scrivi un messaggio" @keyup.enter="newMessagePush(activeIndex)">
                             <button><i class="fa-solid fa-microphone"></i></button>
-                            <div class="send-message">
+                            <div class="send-message" @click="newMessagePush(activeIndex)">
                                 <button><i class="fa-solid fa-share"></i></button>
                             </div>
                         </div>
