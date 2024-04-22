@@ -66,105 +66,16 @@
                     <div class="search-contact">
                         <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <div class="all-contact">
-                        <div class="contact-card">
+                    <div class="all-contact" >
+                        <div class="contact-card" v-for="curContact in contacts">
                             <div class="contact-photo">
-                                <img src="./img/avatar_1.jpg" alt="contact-avatar">
+                                <img :src="`./img/avatar${curContact.avatar}.jpg`"
+                                alt="contact-avatar">
                             </div>
                             <div class="message-preview">
-                                <h4 class="smallfont">Michele</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
+                                <h4 class="smallfont">{{curContact.name}}</h4>
+                                <span v-for="(curMessage, curIndex) in curContact.messages" class="smallerfont greytext">{{curContact.message}}</span>
                                 <span class="time verysmallfont greytext">16:15</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_2.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Fabio</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">16:05</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_3.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Samuele</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">16:03</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_4.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Alessandro B.</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:50</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_5.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Alessadnro L.</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:45</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_6.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Claudia</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:40</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_7.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Federico</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:22</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_8.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Davide</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:15</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_1.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Michele D.</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">14:15</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="./img/avatar_7.jpg" alt="contact-avatar">
-                            </div>
-                            <div class="message-preview">
-                                <h4 class="smallfont">Federico G.</h4>
-                                <span class="smallerfont greytext">Lorem ipsum dolor</span>
-                                <span class="time verysmallfont greytext">15:22</span>
                             </div>
                         </div>
                     </div>
@@ -208,10 +119,10 @@
                     <div class="chat">
                         <!-- MESSAGES -->
                         <div class="messages">
-                            <div class="sent flex x-right">
+                            <div v-for="(curMessage, index) in contacts[0].messages" v-if="curMessage.status" class="sent flex x-right">
                                 <div class="message">
                                     <div class="message-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, alias architecto consequatur a, veniam obcaecati tempore neque repellat harum animi atque fuga natus excepturi sint non ratione illo eius nostrum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda sequi, odio eligendi, nesciunt similique necessitatibus quos rem fugit minima in, veritatis voluptas laboriosam. Nulla a officia, repellat in voluptate optio!</p>
+                                        <p>{{contacts[index].messages[index].message}}</p>
                                     </div>
                                     <div class="message-options icongrey">
                                         <span><a href=""><i class="fa-solid fa-chevron-down"></i></a></span>
@@ -223,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="message-time verysmallfont icongrey">
-                                        <span>16:15</span>
+                                        <span>{{contacts[index].messages[index].date}}</span>
                                     </div>
                                 </div>
                             </div>
