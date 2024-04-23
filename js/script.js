@@ -202,11 +202,13 @@ createApp({
                 message: this.userText,
                 status: 'sent'
             }
-            this.contacts[index].messages.push(newMessage);
-            this.userText = ""
+            if (newMessage.message.trim().length > 0){
+                this.contacts[index].messages.push(newMessage);
+                setTimeout (this.responseMessage, 1000)
+                this.userText = ""
+                return newMessage
+            }
 
-            setTimeout (this.responseMessage, 1000)
-            return newMessage
         },
 
         searchName: function() {
