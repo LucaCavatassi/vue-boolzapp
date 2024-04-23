@@ -53,6 +53,9 @@
     justify-content: space-between;
 }
 
+.bg-trans{
+    background-color: transparent;
+}
 /* colors */
 .icongrey{
     color: var(--iconsgrey);

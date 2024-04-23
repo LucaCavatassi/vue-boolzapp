@@ -6,6 +6,7 @@ createApp({
             activeIndex: 0,
             userText: this.userText,
             inputSearchText: this.inputSearchText,
+            show: '',
             contacts: [
         //CONTACT  
                 {
@@ -193,7 +194,7 @@ createApp({
             this.contacts[this.activeIndex].messages.push(responseMessage);
         },
 
-        newMessagePush: function(index){
+        newMessagePush: function(index) {
             const dt = luxon.DateTime
             const now = dt.now();
             let newMessage = {
@@ -208,19 +209,24 @@ createApp({
             return newMessage
         },
 
-        searchName: function(inputText) {
-            inputText = this.inputSearchText
-            console.log(inputText);
+        searchName: function() {
             this.contacts.forEach(curName => {
-                
                 if (curName.name.toLowerCase().includes(this.inputSearchText.toLowerCase())) {
                     curName.visible = true;
                 } else {
                     curName.visible = false;
                 }
-                // console.log(curName);
             });
+        },
 
+        deleteMessage: function(index){
+            this.contacts[this.activeIndex].messages.splice(index,1);
+        },
+
+        showMenu: function(index) {
+            this.isOpen = !this.isOpen
+            console.log(index);
+            return index
         }
     }
 }).mount('#app')
@@ -228,3 +234,7 @@ createApp({
 
 
 // SE IL NOME NON COMPRENDE LA LETTERA X ALLORA VISIBLE UGUALE FALSE
+
+// APRITI SE IL MESSAGE.MESSAGE === 
+
+// al click index diventa clickedIndex
