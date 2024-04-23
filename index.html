@@ -64,10 +64,11 @@
                 <!-- CONTACTS -->
                 <main>
                     <div class="search-contact">
-                        <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchName">
+                        <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputSearchText" @keyup="searchName">
+                        <label for="search"></label>
                     </div>
-                    <div class="all-contact" >
-                        <div class="contact-card" v-for="(curContact, index) in contacts" @click="activeIndex = index">
+                    <div class="all-contact">
+                        <div class="contact-card" v-for="(curContact, index) in contacts" @click="activeIndex = index" v-show="curContact.visible">
                             <div class="contact-photo">
                                 <img :src="`./img/avatar${curContact.avatar}.jpg`"
                                 alt="contact-avatar">

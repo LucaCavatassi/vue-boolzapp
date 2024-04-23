@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             activeIndex: 0,
+            userText: this.userText,
+            inputSearchText: this.inputSearchText,
             contacts: [
         //CONTACT  
                 {
@@ -204,6 +206,21 @@ createApp({
 
             setTimeout (this.responseMessage, 1000)
             return newMessage
+        },
+
+        searchName: function(inputText) {
+            inputText = this.inputSearchText
+            console.log(inputText);
+            this.contacts.forEach(curName => {
+                
+                if (curName.name.toLowerCase().includes(this.inputSearchText.toLowerCase())) {
+                    curName.visible = true;
+                } else {
+                    curName.visible = false;
+                }
+                // console.log(curName);
+            });
+
         }
     }
 }).mount('#app')
