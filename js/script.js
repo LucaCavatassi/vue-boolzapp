@@ -227,14 +227,11 @@ createApp({
             this.isOpen = !this.isOpen
             console.log(index);
             return index
-        }
-    }
+        },
+
+        
+    },
 }).mount('#app')
 
 
-
-// SE IL NOME NON COMPRENDE LA LETTERA X ALLORA VISIBLE UGUALE FALSE
-
-// APRITI SE IL MESSAGE.MESSAGE === 
-
-// al click index diventa clickedIndex
+// lastposition = array.length - 1

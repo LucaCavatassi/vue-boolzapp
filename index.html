@@ -82,9 +82,9 @@
                             </div>
                             <div class="message-preview">
                                 <h4 class="smallfont">{{curContact.name}}</h4>
-                                <span v-for="(curMessage, curIndex) in curContact.messages"
-                                    class="smallerfont greytext">{{curMessage.message}}</span>
-                                <span class="time verysmallfont greytext">16:15</span>
+                                <span
+                                    class="smallerfont greytext">{{curContact.messages[curContact.messages.length - 1].message}}</span>
+                                <span class="time verysmallfont greytext">{{ curContact.messages[curContact.messages.length - 1].date }}</span>
                             </div>
                         </div>
                     </div>
