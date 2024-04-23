@@ -7,6 +7,7 @@ createApp({
             userText: '',
             inputSearchText: '',
             show: '',
+            quotes: ["perfetto", "non penso sai", "birretta?", "non vedo l'ora sia venerdì"],
             contacts: [
         //CONTACT  
                 {
@@ -188,11 +189,12 @@ createApp({
             const now = dt.now();
             let responseMessage = {
                 date: now.setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
-                message: "ok",
+                message: this.quotes[Math.floor(Math.random() * this.quotes.length)],
                 status: "received",
             }
             this.contacts[this.activeIndex].messages.push(responseMessage);
         },
+
 
         newMessagePush: function(index) {
             const dt = luxon.DateTime
@@ -208,7 +210,6 @@ createApp({
                 this.userText = ""
                 return newMessage
             }
-
         },
 
         searchName: function() {
