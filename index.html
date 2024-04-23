@@ -160,7 +160,7 @@
                             <input aria-label="type" type="text" v-model="userText" id="type"
                                 placeholder="Scrivi un messaggio" @keyup.enter="newMessagePush(activeIndex)">
                             <button><i class="fa-solid fa-microphone"></i></button>
-                            <div class="send-message" @click="newMessagePush(activeIndex)">
+                            <div class="send-message" @click="newMessagePush(activeIndex)" v-if="userText !== ''">
                                 <button><i class="fa-solid fa-share"></i></button>
                             </div>
                         </div>

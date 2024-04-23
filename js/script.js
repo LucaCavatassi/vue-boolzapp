@@ -4,8 +4,8 @@ createApp({
     data() {
         return {
             activeIndex: 0,
-            userText: this.userText,
-            inputSearchText: this.inputSearchText,
+            userText: '',
+            inputSearchText: '',
             show: '',
             contacts: [
         //CONTACT  
