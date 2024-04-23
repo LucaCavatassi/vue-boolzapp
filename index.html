@@ -64,7 +64,7 @@
                 <!-- CONTACTS -->
                 <main>
                     <div class="search-contact">
-                        <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input aria-label="search" id="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchName">
                     </div>
                     <div class="all-contact" >
                         <div class="contact-card" v-for="(curContact, index) in contacts" @click="activeIndex = index">
@@ -74,7 +74,7 @@
                             </div>
                             <div class="message-preview">
                                 <h4 class="smallfont">{{curContact.name}}</h4>
-                                <span v-for="(curMessage, curIndex) in curContact.messages" class="smallerfont greytext">{{curContact.message}}</span>
+                                <span v-for="(curMessage, curIndex) in curContact.messages" class="smallerfont greytext">{{curMessage.message}}</span>
                                 <span class="time verysmallfont greytext">16:15</span>
                             </div>
                         </div>
@@ -160,6 +160,8 @@
         </div>
     </main>
 
+<!-- LUXON -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 <!-- JS -->
     <script src="./js/script.js"></script>
 </body>

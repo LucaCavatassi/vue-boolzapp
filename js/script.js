@@ -181,8 +181,10 @@ createApp({
     
     methods: {
         responseMessage: function() {
+            const dt = luxon.DateTime
+            const now = dt.now();
             let responseMessage = {
-                date: Date(),
+                date: now.setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: "ok",
                 status: "received",
             }
@@ -190,8 +192,10 @@ createApp({
         },
 
         newMessagePush: function(index){
+            const dt = luxon.DateTime
+            const now = dt.now();
             let newMessage = {
-                date: Date(),
+                date: now.setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.userText,
                 status: 'sent'
             }
@@ -204,3 +208,6 @@ createApp({
     }
 }).mount('#app')
 
+
+
+// SE IL NOME NON COMPRENDE LA LETTERA X ALLORA VISIBLE UGUALE FALSE
