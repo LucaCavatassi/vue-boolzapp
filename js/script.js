@@ -195,7 +195,6 @@ createApp({
             this.contacts[this.activeIndex].messages.push(responseMessage);
         },
 
-
         newMessagePush: function(index) {
             const dt = luxon.DateTime
             const now = dt.now();
@@ -206,7 +205,7 @@ createApp({
             }
             if (newMessage.message.trim().length > 0){
                 this.contacts[index].messages.push(newMessage);
-                setTimeout (this.responseMessage, 1000)
+                setTimeout (this.responseMessage, 1500)
                 this.userText = ""
                 return newMessage
             }
